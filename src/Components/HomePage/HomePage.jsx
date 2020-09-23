@@ -15,9 +15,9 @@ export default class HomePage extends Component {
 
   componentDidMount() {
     const cropper = new Cropper(this.imageElement.current, {
-      zoomable: false,
-      scalable: false,
-      aspectRatio: 1.2,
+      zoomable: true,
+      scalable: true,
+      aspectRatio: 2 / 1,
       crop: () => {
         const canvas = cropper.getCroppedCanvas();
         this.setState({ imagePreview: canvas.toDataURL("image/png") });
@@ -30,12 +30,12 @@ export default class HomePage extends Component {
       <Container>
         <div>
           <div className="image-main">
-            <img ref={this.imageElement} src={this.props.src} alt="source" />
+            <img ref={this.imageElement} src={this.props.src} alt="main" />
           </div>
           <img
             className="image-preview"
             src={this.state.imagePreview}
-            alt="destination"
+            alt="preview"
           />
         </div>
       </Container>
