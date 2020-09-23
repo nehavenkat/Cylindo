@@ -17,10 +17,10 @@ Implementation:
     npm install cropperjs
 5.  In HomePage.css create the stylings for the Main image and Preview image
 6.  In Render within the div call the two images
-7.  Now create a state for the Previewimage and render it in the image src
-8.  Now comes the componet did mount taking the reference from
+7.  Created a state for the Previewimage and render it in the Previewimage src
+8.  ComponentDidMount taking the reference from
     https://www.npmjs.com/package/cropperjs for the options
-9.  Once it is done call it in App.js
+9.  Once it is done called it in App.js
 
 Result:
 
