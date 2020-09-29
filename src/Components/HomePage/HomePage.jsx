@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Banner from "../Images/Banner.png";
 import ReactCrop from "react-image-crop";
+import { Container, Button } from "reactstrap";
+
 import "react-image-crop/dist/ReactCrop.css";
 import "../HomePage/HomePage.css";
 
@@ -34,7 +36,7 @@ const HomePage = () => {
   }
 
   return (
-    <div>
+    <Container>
       <div className="image-main">
         <ReactCrop
           src={Banner}
@@ -42,17 +44,17 @@ const HomePage = () => {
           crop={crop}
           onChange={setCrop}
         />
-        <button className="primary" onClick={getCroppedImg}>
+        <Button color="warning" size="sm" onClick={getCroppedImg}>
           {" "}
-          crop Image
-        </button>
+          Click to get detail shot
+        </Button>
       </div>
       {result && (
         <div className="image-preview">
           <img src={result} alt="cropped Image" />
         </div>
       )}
-    </div>
+    </Container>
   );
 };
 export default HomePage;

@@ -1,4 +1,4 @@
-The goal is to create a tool that lets you create detail shots from a product image.
+The goal is to create a Tool that lets you create detail shots from a product image.
 
 Key Features:
 
@@ -13,15 +13,16 @@ Implementation:
 3.  Install Reactstrap and Bootstrap
     npm install --save reactstrap
     npm install --save bootstrap
-4.  Install cropper.js
-    npm install cropperjs
+4.  Install react-image-crop
+    npm install react-image-crop --save
 5.  In HomePage.css create the stylings for the Main image and Preview image
-6.  In Render within the div call the two images
-7.  Created a state for the Previewimage and render it in the Previewimage src
-8.  ComponentDidMount taking the reference from
-    https://www.npmjs.com/package/cropperjs for the options
-9.  Once it is done called it in App.js
-
-Result:
-
-We can mark the image for a detail short as well as it is possibel to move the mouse and resize it.
+6.  Create a State for the image,crop and result using hooks
+7.  Create functions for onloadImage, onClick and onchange
+8.  Refernce for Canvas is from react-image-crop
+9.  When the server is ON, the user can see the image that he wants the detailed shots
+    off
+10. He needs to drag a rectangle with the mouse to mark the part of the image to see the  
+    detailed shots of it
+11. After selection he can move it by dragging the rectangle with the mouse, and also  
+    resize it.
+12. If he wants to see the detailed shots then he can click on the Button.
