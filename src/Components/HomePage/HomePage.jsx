@@ -2,14 +2,13 @@ import React, { useState } from "react";
 import Banner from "../Images/Banner.png";
 import ReactCrop from "react-image-crop";
 import { Container, Button } from "reactstrap";
-
 import "react-image-crop/dist/ReactCrop.css";
 import "../HomePage/HomePage.css";
 
 const HomePage = () => {
   const [image, setImage] = useState(null);
   const [crop, setCrop] = useState({ aspect: 16 / 9 });
-  const [result, setResult] = useState(null);
+  const [croppedImage, setCroppedImage] = useState(null);
 
   function getCroppedImg() {
     const canvas = document.createElement("canvas");
@@ -32,7 +31,7 @@ const HomePage = () => {
     );
 
     const base64Image = canvas.toDataURL("image/jpeg");
-    setResult(base64Image);
+    setCroppedImage(base64Image);
   }
 
   return (
@@ -44,14 +43,14 @@ const HomePage = () => {
           crop={crop}
           onChange={setCrop}
         />
-        <Button color="warning" size="sm" onClick={getCroppedImg}>
+        <Button color="primary" size="sm" onClick={getCroppedImg}>
           {" "}
           Click to get detail shot
         </Button>
       </div>
-      {result && (
+      {croppedImage && (
         <div className="image-preview">
-          <img src={result} alt="cropped Image" />
+          <img src={croppedImage} alt="cropped Image" />
         </div>
       )}
     </Container>
